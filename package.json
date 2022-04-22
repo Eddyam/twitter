@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "node ./node_modules/jest/bin/jest.js" 
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Eddyam/twitter/issues"
   },
-  "homepage": "https://github.com/Eddyam/twitter#readme"
+  "homepage": "https://github.com/Eddyam/twitter#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }
