@@ -1,3 +1,4 @@
+const User = require("../../app/models/User")
 const UserService = require("../../app/services/UserService")
 
 describe("Tests for UserService", () => {
@@ -22,5 +23,18 @@ describe("Tests for UserService", () => {
         const user = UserService.create(1, "Eddyam", "Edder")
         UserService.updateUserUsername(user, "EddyamJP")
         expect(user.username).toBe("EddyamJP")
+    })
+
+    test("4. Given a list of users give me the list of usernames", () => {
+        const user1 = UserService.create(1, "Eddyam", "Edder")
+        const user2 = UserService.create(2, "Macar", "Maria")
+        const user3 = UserService.create(3, "AlexJur", "Alejandro")
+        const usernames = UserService.getAllUsernames([user1, user2, user3])
+        expect(usernames).toContain("Eddyam")
+        expect(usernames).toContain("MaCar")
+        expect(usernames).toContain("AlexJur")
+
+
+
     })
 })
